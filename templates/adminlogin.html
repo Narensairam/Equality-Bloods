@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/1d9b3f57e5.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Ysabeau+Infant:ital,wght@1,200&display=swap');
+        body{
+            overflow-x: hidden;
+        }
+        #logo{
+            margin-top: 0;
+            height: 150px;
+            position:absolute;
+        }
+        #bgimage {
+            
+            opacity:0.6;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            }
+        #log{
+            border: 4px solid white;
+            border-radius: 35px;
+            position: absolute;
+            top: 180px;
+            left: 500px;
+            width: 400px;
+            height: 450px;
+            font-size: 30px;
+            font-family:'Chakra Petch', sans-serif;
+            color: white;
+            text-align: center;
+        }
+        #form{
+            text-align: left;
+            padding-left: 10px;
+        }
+        #overlay {
+            background-color: rgba(255, 0, 0, 0.6); /* Red color with 60% opacity */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        #form input{
+    width:350px;
+    height:35px;
+    background: transparent;
+    border:1px solid white;
+    border-top:none;
+    border-right:none;
+    border-left:none;
+    font-size:15px;
+    letter-spacing:1px;
+    margin-top:3px;
+    font-family: sans-serif;
+    color: white;
+}
+    #form label{
+        padding-top: 100px;
+    }
+    .app{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top:90px;
+    right:25px;
+ }
+ .app a{ 
+    font-size: 30px;
+     text-decoration: none;
+     color:white;
+     margin-top: 100px;
+ }
+    </style>
+</head>
+<body>
+    <img id="logo" src="/static/images/logo1.png">
+    <div id = "log">
+    <h1>ADMIN LOGIN</h1>
+    <form id = "form" method="post">
+        <h2 style="color: white;font-family:'Chakra Petch', sans-serif;font-size: 20px;margin-top: -20px;">{{ error }}</h2>
+        <label>ADMIN NAME:</label><br>
+        <input type="text" name="adminname"><br>
+        <label>PASSWORD:</label><br>
+        <input type="password" name="adminid"><br>
+        <input style="color:red;background-color: white; width:370px;margin-top: 40px;" type="submit" value="LOGIN">
+    </form>
+    </div>
+    <img id="bgimage" src="{{ url_for('static', filename='images/photohands.jpg')}}">
+    <div id="overlay"></div>
+    <div class="app">
+        <a class="fa fa-facebook" href="https://www.facebook.com/" aria-hidden="true"></a>
+        <a class="fa fa-instagram"href="https://www.instagram.com/" aria-hidden="true" ></a>
+        <a class="fa fa-twitter" href="https://twitter.com/?lang=en-in"aria-hidden="true" ></a>
+        <a class="fa fa-linkedin" href="https://www.skype.com/en/"aria-hidden="true" ></a>
+        <br>
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1d9b3f57e5.js" crossorigin="anonymous"></script>
+    <title>HOME</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Ysabeau+Infant:ital,wght@1,200&display=swap');
+        body{
+            overflow-x : hidden;
+        }
+        #title{
+            font-family:'Chakra Petch', sans-serif ;
+            color: #C51605;
+            background-color:white;
+            margin-top: 1%;
+            font-size: 7pc;
+            text-align: center;
+        }
+        #logo{
+            margin-top: 0;
+            height: 150px;
+            position:absolute;
+        }
+        #maindiv {
+            margin-top: -3%;
+           background-color: #C51605;
+           text-align:left;
+        }
+        #regdet,#dondet,#bloav,#bloreq,#addet,#log{
+            font-size: 1.4pc;
+           color:azure;
+           font-family:'Chakra Petch', sans-serif ;
+           text-decoration: none;
+           padding-left: 50px;
+        }
+        #icons a{
+            position: relative;
+
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    padding-left: 30px;
+        }
+        #bgimage {
+            
+            opacity:0.6;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            }
+            #overlay {
+            background-color: rgba(0, 0, 0, 0.6); /* Red color with 60% opacity */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <img id="logo" src="/static/images/logo.png">
+    <h1 id="title">EQUALITY BLOODS</h1>
+    <header>
+        <div id="maindiv">
+            <a id="regdet" href="./registrationdetails" >REGISTRATION DETAILS</a>
+        <a id="dondet" href="./donordetails">DONOR DETAILS</a>
+        <a id="bloav" href="./bloodavail">BLOOD AVAILABLE</a>
+        <a id="bloreq" href="./bloodrequest">BLOOD REQUESTED</a>
+        <a id="addet" href="./admindetails">ADMIN DETAILS</a>
+        <a id="log" href="{{ url_for('adminlogout') }}">LOGOUT</a>
+        </div>
+    </header>
+    <div style="background-color: rgba(0,0,0,0.75);font-family:'Chakra Petch', sans-serif ;font-size: 100px; margin-top: -134px;">
+        <img id="bgimage" src="{{ url_for('static', filename='images/photohands.jpg')}}">
+        <div id="overlay"></div>
+        <h1 style="color: #C51605;"># EVERY</h1><h1 style="color: white;">DROP</h1><h1 style="color: #C51605;">MATTERS....</h1>
+    </div>
+    <div id="icons" style="bottom: 0px;color: white;background-color: #C51605;width: 100%;margin-top: -134px;">
+        <h1></h1>
+        <h2 style="padding-left: 30px;font-family:'Chakra Petch', sans-serif ;">FOLLOW US ON</h2>
+        <a class="fa fa-facebook" href="https://www.facebook.com/" aria-hidden="true"></a>
+        <a class="fa fa-instagram"href="https://www.instagram.com/" aria-hidden="true" ></a>
+        <a class="fa fa-twitter" href="https://twitter.com/?lang=en-in"aria-hidden="true" ></a>
+        <a class="fa fa-linkedin" href="https://www.skype.com/en/"aria-hidden="true" ></a>
+    </div>
+</body>
+</html>

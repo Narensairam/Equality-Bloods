@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add User</title>
+    <script src="https://kit.fontawesome.com/1d9b3f57e5.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Ysabeau+Infant:ital,wght@1,200&display=swap');
+        #logo{
+            margin-top: 0;
+            height: 150px;
+            position:absolute;
+        }
+        #bg-video {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1;
+                }
+                #overlay {
+            background-color: rgba(255, 0, 0, 0.5); /* Red color with 60% opacity */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        #signupdiv{
+            border: 5px solid white;
+            position: absolute;
+            top: 20px; left: 550px;
+            font-size: 30px;
+            border-radius: 35px;
+            width: 400px;
+            height: 700px;
+        }
+        #spage{
+            font-family: 'Chakra Petch', sans-serif;
+            color:red;
+            background-color: white;
+            width: 60x;
+        }
+        #form{
+            margin-left: 20px;
+            color:white;
+            font-family: 'Chakra Petch', sans-serif;
+        }
+        #form input{
+            font-family: cursive;
+            font-size: 15px;
+        }
+        .olduser{
+            font-family: 'Chakra Petch', sans-serif;
+            text-align: center;
+        }
+        .olduser strong{
+            color:white; font-size: 23px;text-align: center;
+        }
+        .olduser a{
+            color:white;text-decoration: none; font-size: 23px;text-align: center;
+        }
+        #form input{
+    width:350px;
+    height:35px;
+    background: transparent;
+    border:1px solid white;
+    border-top:none;
+    border-right:none;
+    border-left:none;
+    margin-bottom: 5px;
+    font-size:15px;
+    letter-spacing:1px;
+    margin-top:3px;
+    font-family: sans-serif;
+    color: white;
+}
+    #form label{
+        padding-top: 200px;
+    }
+    .app{
+    position: absolute;
+    top:650px;
+    right:125px;
+ }
+ .app a{ 
+    font-size: 30px;
+     text-decoration: none;
+     color:white;
+     margin-left:20px;
+     padding-right: 1px;
+    
+ }
+ #err{
+    font-size: 20px;
+    font-family: 'Chakra Petch',sans-serif;
+    color: white;
+ }
+    </style>
+</head>
+<body>
+    <img id="logo" src="/static/images/logo1.png">
+    <div>
+        <video autoplay muted loop id="bg-video">
+            <source src="{{ url_for('static', filename='videos/video2.mp4')}}" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+    </div>
+    <div id="overlay"></div>
+    <div id="signupdiv">
+    <div id="spage">
+    <h1 style="font-size: 30px;text-align: center;">SIGNUP</h1>
+    </div>
+    <h2 id="err">{{ sregis }}</h2>
+    <form id="form" action="/login" method="post">
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br>
+        <lable>AGE:</lable><br>
+        <input type="number" name="age" required><br>
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br>
+        <label>PASSWORD:</label><br>
+        <input type="password" name="passwd" required><br>
+        <input type="submit" value="SIGNUP"style="background-color:white;color:red">
+    </form><br>
+    <div class="olduser">
+        <strong>ALREADY HAVE ACCOUNT?</strong><br>
+        <a href="./signin"style="color:red;background-color:white;border-radius:5px;">SIGNIN</a>
+    </div>
+    <br>
+    <div class="app">
+        <a class="fa fa-facebook" href="https://www.facebook.com/" aria-hidden="true"></a>
+        <a class="fa fa-instagram"href="https://www.instagram.com/" aria-hidden="true" ></a>
+        <a class="fa fa-twitter" href="https://twitter.com/?lang=en-in"aria-hidden="true" ></a>
+        <a class="fa fa-linkedin" href="https://www.skype.com/en/"aria-hidden="true" ></a>
+        <br>
+    </div>
+    </div>
+</body>
+</html>

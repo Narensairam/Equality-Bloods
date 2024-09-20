@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Ysabeau+Infant:ital,wght@1,200&display=swap');
+        body{
+            overflow-x : hidden;
+            background-color: black;
+        }
+        #title{
+            font-family:'Chakra Petch', sans-serif ;
+            color: #C51605;
+            background-color:white;
+            margin-top: 1%;
+            font-size: 7pc;
+            text-align: center;
+        }
+        #logo{
+            margin-top: 0;
+            height: 150px;
+            position:absolute;
+        }
+        th,td{
+            font-family:'Chakra Petch', sans-serif ;
+            padding-top: 30px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img id="logo" src="/static/images/logo.png">
+    <h1 id="title">EQUALITY BLOODS</h1>
+    <div style="background-color: #C51605;">
+    <a href="./adminhome" style="color: white;font-size: 25px;font-family: 'Chakra Petch',sans-serif;text-decoration: none;">&lt;--ADMIN HOME</a>
+    </div>
+    <br>
+    <table style="width:60%;height: 70%;text-align: center; margin-left:20%;border: 1px solid black;background-color: #C51605;color: white;border-radius: 10px;">
+        <thead>
+            <tr>
+                <th>ADMIN NAME</th>
+                <th>ADMIN ID</th>
+                <th>ADMIN EAMIL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for admin in admins %}
+            <tr>
+                <td>{{ admin[0] }}</td>
+                <td>{{ admin[1] }}</td>
+                <td>{{ admin[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

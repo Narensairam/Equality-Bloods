@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>donor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Ysabeau+Infant:ital,wght@1,200&display=swap');
+        body{
+            overflow-x : hidden;
+        }
+        #title{
+            font-family:'Chakra Petch', sans-serif ;
+            color: white;
+            margin-top: 1%;
+            font-size: 7pc;
+            text-align: center;
+        }
+        #logo{
+            margin-top: 0;
+            height: 150px;
+            position:absolute;
+        }#overlay {
+            background-color: rgba(255, 255, 255, 0.2); /* Red color with 60% opacity */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        #form input{
+    width:240px;
+    height:35px;
+    background: transparent;
+    border:1px solid red;
+    border-top:none;
+    border-right:none;
+    border-left:none;
+    font-size:15px;
+    letter-spacing:1px;
+    margin-top:10px;
+    font-family: sans-serif;
+    color: red;
+}
+#form label{
+        color: red;
+        font-family:'Chakra Petch',sans-serif;
+        font-size: 20px;
+        padding-top: 300px;
+    }
+    </style>
+</head>
+<body >
+    <img id="logo" src="/static/images/logo1.png">
+    <h1 id="title">EQUALITY BLOODS</h1>
+    <img id="bgimage" src="{{ url_for('static', filename='images/heartpic.jpg')}}">
+    <div id="overlay"></div>
+    <div style="position: absolute;top: 220px;left: 250px;font-size: 30px;border: 1px solid rgba(255,255,255);background-color: rgba(255,255,255);border-radius: 30px;color: black;height: 400px;width: 300px;text-align: center;">
+    <p style="color: red;font-family:'Chakra Petch',sans-serif;font-size: 20px;">{{ text }}</p>
+    <form id="form" action="/donor" method="post">
+        <label>NAME:</label><br>
+        <input type="text" name="name"><br>
+        <label>BLOODGROUP:</label><br>
+        <input type="text" name="bloodgroup"><br>
+        <label>EMAIL:</label><br>
+        <input type="email" name="email"><br>
+        <input type="submit" value="PROCEED" style="font-size: 25px;border: 2px solid red;margin-left: 4px;">
+        <br>
+        <a href="./home" style=" text-decoration: none; color: red;font-size: 25px;font-family:'Chakra Petch',sans-serif;">Back to Home</a>
+
+    </form>
+    </div>
+    <style>
+        #bgimage {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1;
+                }
+    </style>
+</body>
+</html>
